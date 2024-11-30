@@ -3,7 +3,7 @@ import sqlite3
 from datetime import datetime
 
 
-app = Flask(__name__)
+app = Flask(__name__,template_folder='template')
 app.secret_key = "super_secret_key"
 
 # Inicializar la base de datos
