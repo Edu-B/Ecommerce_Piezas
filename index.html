@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Catálogo de Piezas</h1>
+<div class="row">
+    {% for producto in productos %}
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <img src="{{ producto[5] }}" class="card-img-top" alt="{{ producto[1] }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ producto[1] }}</h5>
+                <p class="card-text">{{ producto[2] }}</p>
+                <p class="card-text"><strong>Precio:</strong> ${{ producto[3] }}</p>
+                <a href="/producto/{{ producto[0] }}" class="btn btn-primary">Ver Detalles</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

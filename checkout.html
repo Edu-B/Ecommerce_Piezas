@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Confirmar Compra{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Confirmar Compra</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for producto_id, item in carrito.items() %}
+        <tr>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.cantidad }}</td>
+            <td>${{ item.cantidad * item.precio }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<h3>Total: ${{ total }}</h3>
+<a href="/" class="btn btn-success">Finalizar Compra</a>
+{% endblock %}

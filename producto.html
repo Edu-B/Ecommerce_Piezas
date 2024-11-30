@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}{{ producto[1] }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <img src="{{ producto[5] }}" class="img-fluid" alt="{{ producto[1] }}">
+    </div>
+    <div class="col-md-6">
+        <h1>{{ producto[1] }}</h1>
+        <p>{{ producto[2] }}</p>
+        <p><strong>Precio:</strong> ${{ producto[3] }}</p>
+        <form action="/agregar_carrito/{{ producto[0] }}" method="post">
+            <button type="submit" class="btn btn-success">Agregar al Carrito</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
